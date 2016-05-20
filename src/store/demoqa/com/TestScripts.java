@@ -21,22 +21,10 @@ public class TestScripts {
 	public static String product_price;
 	public static String cart_price;
 	public static String empty_cart_message;
-	public static String product_name = "Apple iPhone 4S 16GB SIM-Free – Black";
+	public static String product_name = "Apple iPhone 4S 16GB SIM-Free â€“ Black";
 	public static String stored_name;
 	public static String expected_cart_message = "Oops, there is nothing in your cart.";
 
-	/*public static void main(String[] args) {
-		LaunchBrowser("firefox");
-		Login("tester321", "n5@YAUjGRa1Ll7qD");
-		Purchase();
-		validate_cart();
-		manage_account();
-		Logout();
-		LaunchBrowser("FF");
-		Login("tester321", "n5@YAUjGRa1Ll7qD");
-		validate_account();
-
-	}*/
 
 	@Parameters("Browser")
 	@Test
@@ -70,7 +58,7 @@ public class TestScripts {
 		
 	}
 
-	@Test // (dependsOnMethods = { "Login" })
+	@Test //
 	public static void Purchase() {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath("//input[@value='Search Products']")).sendKeys("iPhone", Keys.ENTER);
@@ -86,7 +74,7 @@ public class TestScripts {
 		Assert.assertEquals(product_price, cart_price);
 	}
 
-	@Test // (dependsOnMethods = { "Purchase" })
+	@Test // 
 	public static void validate_cart() {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.cssSelector("form>input[value=Remove]")).click();
@@ -97,7 +85,7 @@ public class TestScripts {
 	}
 
 	@Parameters("fname")
-	@Test // (dependsOnMethods = { "Login" })
+	@Test 
 	public static void manage_account(String fname) {
 		// Adding first name in the Billing details
 
@@ -118,7 +106,7 @@ public class TestScripts {
 
 	}
 
-	@Test // (dependsOnMethods = { "manage_account" })
+	@Test 
 	public static void validate_account() {
 
 		driver.switchTo().defaultContent();
@@ -129,7 +117,7 @@ public class TestScripts {
 
 	}
 
-	@Test // (dependsOnMethods = { "validate_cart" })
+	@Test 
 	public static void Logout() {
 
 		driver.switchTo().defaultContent();
