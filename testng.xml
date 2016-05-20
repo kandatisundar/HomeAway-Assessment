@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HomeAwayAssessment">
+<test name="PriceValidation">
+<parameter name="Browser" value="firefox" />
+<parameter name="fname" value="Tester" />
+    <classes>
+        <class name="store.demoqa.com.TestScripts">
+            <methods>
+                <include name="LaunchBrowser"></include>
+                <include name="Login"></include>
+                <include name="Purchase"></include>
+                                
+            </methods>
+            
+        </class>
+    </classes>
+</test>
+<test name="EmptyCartValidation">
+<parameter name="Browser" value="firefox" />
+<parameter name="fname" value="Tester" />
+<classes>
+        <class name="store.demoqa.com.TestScripts">
+            <methods>
+                <include name="validate_cart"></include>         
+            	</methods>
+        </class>
+    </classes>
+    </test>
+    
+<test name="ManageAccountValidation">
+<parameter name="Browser" value="firefox" />
+<parameter name="fname" value="Tester" />
+<classes>
+        <class name="store.demoqa.com.TestScripts">
+            <methods>
+                <include name="manage_account"></include>
+                <include name="Logout"></include>
+                <include name="LaunchBrowser"></include>
+                <include name="Login"></include>
+                <include name="validate_account"></include>
+                <include name="Logout"></include>
+            </methods>
+        </class>
+    </classes>
+    </test>
+</suite>
